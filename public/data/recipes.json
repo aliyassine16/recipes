@@ -1,0 +1,125 @@
+{
+  "recipes": [
+    {
+      "name": "Lemon Chicken",
+      "cooking_time": "30 minutes",
+      "image": "lemonChicken.png",
+      "ingredients": [
+        {
+          "quantity": "4",
+          "name": "Chicken Breasts"
+        },
+        {
+          "quantity": "1",
+          "name": "Lemon"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Thyme"
+        }
+      ]
+    },
+    {
+      "name": "Chicken Seaser Salad",
+      "cooking_time": "25 minutes",
+      "image": "chickenSeaserSalad.png",
+      "ingredients": [
+        {
+          "quantity": "2 tsp",
+          "name": "Parmesan"
+        },
+        {
+          "quantity": "1",
+          "name": "Lemon"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Croutons"
+        },
+        {
+          "quantity": "5 leaves",
+          "name": "lettuce"
+        }
+      ]
+    },
+    {
+      "name": "Beef Strognoff",
+      "cooking_time": "30 minutes",
+      "image": "beedStoganoff.png",
+      "ingredients": [
+        {
+          "quantity": "1 Kg",
+          "name": "Beef"
+        },
+        {
+          "quantity": "1",
+          "name": "Mustard"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Mushrooms"
+        }
+      ]
+    }
+  ,
+    {
+      "name": "Beef Strognoff",
+      "cooking_time": "30 minutes",
+      "image": "beedStoganoff.png",
+      "ingredients": [
+        {
+          "quantity": "1 Kg",
+          "name": "Beef"
+        },
+        {
+          "quantity": "1",
+          "name": "Mustard"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Mushrooms"
+        }
+      ]
+    }
+  ,
+    {
+      "name": "Beef Strognoff",
+      "cooking_time": "30 minutes",
+      "image": "beedStoganoff.png",
+      "ingredients": [
+        {
+          "quantity": "1 Kg",
+          "name": "Beef"
+        },
+        {
+          "quantity": "1",
+          "name": "Mustard"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Mushrooms"
+        }
+      ]
+    }
+  ,
+    {
+      "name": "Beef Strognoff",
+      "cooking_time": "30 minutes",
+      "image": "beedStoganoff.png",
+      "ingredients": [
+        {
+          "quantity": "1 Kg",
+          "name": "Beef"
+        },
+        {
+          "quantity": "1",
+          "name": "Mustard"
+        },
+        {
+          "quantity": "1tsp",
+          "name": "Mushrooms"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+
+<div id="todo-list" class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+
+
+
+        <div class="checkbox" ng-repeat="user in users">
+            <label>
+                 {{ user.fullName }}-{{ user.email }}
+            </label>
+        </div>
+
+        <p class="text-center" ng-show="loading">
+            <span class="fa fa-spinner fa-spin fa-3x"></span>
+        </p>
+
+    </div>
+</div>
+
+
+<div id="todo-form" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+            <div class="form-group">
+
+                <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                <label>Full Name:</label>
+                <input type="text" class="form-control input-lg text-center" placeholder="Full Name" ng-model="formData.fullName" required>
+                <label>Email:</label>
+                <input type="email" class="form-control input-lg text-center" placeholder="Email" ng-model="formData.email" required>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="createUser()">Sign Up</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="populateData()">Insert Recipes</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="login()">Login</button>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,49 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="recipeApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Recipes</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body>
+<div class="container">
+
+    <!-- HEADER-->
+    <div class="jumbotron text-center">
+        <h1>The Recipes</h1>
+    </div>
+
+    <ng-view></ng-view>
+
+
+</div>
+
+
+</body>
+</html>
+<script src="js/dirPagination.js"></script>
+<script src="js/core.js"></script> <!-- load our main application -->
+<script src="js/services/userService.js"></script> <!-- load our service -->
+<script src="js/services/recipeService.js"></script> <!-- load our service -->
+<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+<script src="js/controllers/recipeController.js"></script> <!-- load up our controller -->
+<script src="js/controllers/red.js"></script> <!-- load up our controller -->

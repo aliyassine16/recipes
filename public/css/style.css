@@ -1,0 +1,16 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.sort-icon {
+    font-size: 9px;
+    margin-left: 5px;
+}
+
+th {
+    cursor:pointer;
+}
