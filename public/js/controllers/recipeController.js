@@ -1,4 +1,4 @@
-app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeService', '$location', function ($scope, $http, UserService, RecipeService, $location) {
+app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeService', '$location', '$rootScope', function ($scope, $http, UserService, RecipeService, $location, $rootScope) {
 
     $scope.loading = true;
 
@@ -10,10 +10,21 @@ app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeSer
 
     // GET =====================================================================
 
-    RecipeService.get()
-        .success(function (data) {
-            $scope.recipes = data;
-            $scope.loading = false;
-        });
+    var init = function () {
+        RecipeService.get()
+            .success(function (data) {
+                $scope.recipes = data;
+                $scope.loading = false;
+                if ($rootScope.myObject) {
+                    $scope.userEmail = $rootScope.myObject.value;
+                }
+                else{
+                    $location.path('/');
+                }
+            });
+    };
+
+    init();
+
 
 }]);

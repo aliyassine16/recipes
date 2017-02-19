@@ -1,7 +1,8 @@
-app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeService', '$location', function ($scope, $http, UserService, RecipeService, $location) {
+app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeService', '$location','$rootScope', function ($scope, $http, UserService, RecipeService, $location, $rootScope) {
 
     $scope.formData = {};
     $scope.loading = true;
+    $rootScope.myObject = { value: 'aa@cc.cc' };
 
     // GET ====================================================================
 
@@ -48,6 +49,10 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
             });
 
     };
+
+    $scope.login=function(){
+        $location.path('/recipe');
+    }
 
 
 }]);
