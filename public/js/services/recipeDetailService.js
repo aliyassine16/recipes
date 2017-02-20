@@ -1,7 +1,7 @@
 app.factory('RecipeDetailService', ['$http', function ($http) {
     return {
-        get: function () {
-            return $http.get('/api/listRecipeDetail');
+        get: function (id) {
+            return $http.get('/api/listRecipeDetail/'+id);
         }
     }
 }]);

@@ -85,6 +85,22 @@ function getRecipes(res) {
 
 };
 
+function getRecipeDetails(res,id) {
+
+
+    Recipe.find({_id:id})
+        .populate('ingredients')
+        .exec(function (err, recipeDetails) {
+            if (err) {
+                res.send(err);
+            }
+            console.log(JSON.stringify(recipeDetails, null, "\t"));
+            res.json(recipeDetails);
+        });
+
+
+};
+
 module.exports = function (app) {
 
     // api ---------------------------------------------------------------------
@@ -99,6 +115,15 @@ module.exports = function (app) {
         //getUsers(res);
         getRecipes(res);
     });
+
+    app.get('/api/listRecipeDetail/:id', function (req, res) {
+        // use mongoose to get all recipes in the database
+        //getUsers(res);
+        getRecipeDetails(res,req.params.id);
+    });
+
+
+
 
     app.get('/api/populateData', function (req, res) {
         //getUsers(res);

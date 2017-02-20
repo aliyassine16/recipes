@@ -1,4 +1,4 @@
-app.controller("recipeDetailController", ['$scope', '$http', 'UserService', 'RecipeService','RecipeDetailService','$location', '$rootScope', function ($scope, $http, UserService, RecipeService,RecipeDetailService, $location, $rootScope) {
+app.controller("recipeDetailController", ['$scope', '$http', 'UserService', 'RecipeService','RecipeDetailService','$location', '$rootScope','$routeParams', function ($scope, $http, UserService, RecipeService,RecipeDetailService, $location, $rootScope,$routeParams) {
 
     $scope.loading = true;
 
@@ -13,8 +13,20 @@ app.controller("recipeDetailController", ['$scope', '$http', 'UserService', 'Rec
     var init = function () {
 
 
+        RecipeDetailService.get($routeParams.recipeId)
+            .success(function (data) {
+                $scope.recipeDetails = data;
+                $scope.loading = false;
+                if ($rootScope.myObject) {
+                    $scope.userEmail = $rootScope.myObject.value;
+                }
+                else{
+                    //$location.path('/');
 
-        // add the recipe detail request here
+                    //save in local storage
+
+                }
+            });
     };
 
     init();
