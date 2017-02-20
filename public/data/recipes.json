@@ -3,7 +3,7 @@
     {
       "name": "Lemon Chicken",
       "cooking_time": "30 minutes",
-      "image": "lemonChicken.png",
+      "image": "lemonChicken.jpg",
       "ingredients": [
         {
           "quantity": "4",
@@ -22,7 +22,7 @@
     {
       "name": "Chicken Seaser Salad",
       "cooking_time": "25 minutes",
-      "image": "chickenSeaserSalad.png",
+      "image": "chickenSeaserSalad.jpg",
       "ingredients": [
         {
           "quantity": "2 tsp",
@@ -45,7 +45,7 @@
     {
       "name": "Beef Strognoff",
       "cooking_time": "30 minutes",
-      "image": "beedStoganoff.png",
+      "image": "beefStoganoff.jpg",
       "ingredients": [
         {
           "quantity": "1 Kg",
@@ -65,7 +65,7 @@
     {
       "name": "Beef Strognoff",
       "cooking_time": "30 minutes",
-      "image": "beedStoganoff.png",
+      "image": "beefStoganoff.jpg",
       "ingredients": [
         {
           "quantity": "1 Kg",
@@ -85,7 +85,7 @@
     {
       "name": "Beef Strognoff",
       "cooking_time": "30 minutes",
-      "image": "beedStoganoff.png",
+      "image": "beefStoganoff.jpg",
       "ingredients": [
         {
           "quantity": "1 Kg",
@@ -105,7 +105,7 @@
     {
       "name": "Beef Strognoff",
       "cooking_time": "30 minutes",
-      "image": "beedStoganoff.png",
+      "image": "beefStoganoff.jpg",
       "ingredients": [
         {
           "quantity": "1 Kg",

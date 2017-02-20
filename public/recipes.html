@@ -34,6 +34,7 @@
                 <span class="glyphicon sort-icon" ng-show="sortKey=='cooking_time'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
             <th>Main Ingredients</th>
+            <th>Image</th>
         </tr>
         </thead>
         <tbody>
@@ -47,6 +48,10 @@
                     </li>
                 </ul>
                 <a href="#/recipe/{{recipe._id}}">View Details</a>
+            </td>
+            <td>
+                <a href="images/{{recipe.image}}" TARGET="_blank"> <img src="images/{{recipe.image}}" width="150" height="150"/></a>
+
             </td>
         </tr>
 
