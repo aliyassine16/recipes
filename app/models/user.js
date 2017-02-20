@@ -7,5 +7,9 @@ module.exports = mongoose.model('User', {
     email: {
         type: String,
         unique: true
-    }
+    },
+    stared:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Recipe'
+    }]
 });

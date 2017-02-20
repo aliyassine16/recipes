@@ -19,7 +19,10 @@ app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeSer
                     $scope.userEmail = $rootScope.myObject.value;
                 }
                 else{
-                    $location.path('/');
+                    //$location.path('/');
+
+                    //save in local storage
+
                 }
             });
     };
