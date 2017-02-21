@@ -1,4 +1,4 @@
-app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeService', '$location', '$rootScope', function ($scope, $http, UserService, RecipeService, $location, $rootScope) {
+app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeService', '$location', '$rootScope','$localStorage', function ($scope, $http, UserService, RecipeService, $location, $rootScope,$localStorage) {
 
     $scope.loading = true;
 
@@ -15,15 +15,16 @@ app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeSer
             .success(function (data) {
                 $scope.recipes = data;
                 $scope.loading = false;
-                if ($rootScope.myObject) {
-                    $scope.userEmail = $rootScope.myObject.value;
-                }
-                else{
+                //if ($rootScope.myObject) {
+                    $scope.userEmail = $localStorage.message;//$rootScope.myObject.value;
+
+                //}
+                //else{
                     //$location.path('/');
 
                     //save in local storage
 
-                }
+                //}
             });
     };
 

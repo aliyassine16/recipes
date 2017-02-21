@@ -1,4 +1,4 @@
-app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeService', '$location','$rootScope', function ($scope, $http, UserService, RecipeService, $location, $rootScope) {
+app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeService', '$location','$rootScope','$localStorage', function ($scope, $http, UserService, RecipeService, $location, $rootScope,$localStorage) {
 
     $scope.formData = {};
     $scope.loading = true;
@@ -29,6 +29,7 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
                     $scope.loading = false;
                     $scope.formData = {}; // clear the form so our user is ready to enter another
                     $scope.users = data; // assign our new list of users
+                    $localStorage.message = "Hello World";
                     $location.path('/recipe');
                 });
         }
@@ -51,6 +52,7 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
     };
 
     $scope.login=function(){
+        $localStorage.message = "Hello World";
         $location.path('/recipe');
     }
 
