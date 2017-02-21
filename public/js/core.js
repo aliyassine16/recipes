@@ -4,8 +4,8 @@ var app = angular.module("recipeApp", ["ngRoute",'angularUtils.directives.dirPag
 app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "user.html",
-            controller: "mainController"
+            templateUrl: "recipes.html",
+            controller: "recipeController"
         })
         .when("/login", {
             templateUrl: "login.html",
@@ -13,11 +13,11 @@ app.config(function ($routeProvider) {
         })
         .when("/logout", {
             templateUrl: "logout.html",
-            controller: "userController"
+            controller: "logoutController"
         })
         .when("/register", {
-            templateUrl: "register.html",
-            controller: "userController"
+            templateUrl: "user.html",
+            controller: "mainController"
         })
         .when("/recipe", {
             templateUrl: "recipes.html",

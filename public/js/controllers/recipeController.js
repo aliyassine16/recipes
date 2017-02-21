@@ -15,16 +15,8 @@ app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeSer
             .success(function (data) {
                 $scope.recipes = data;
                 $scope.loading = false;
-                //if ($rootScope.myObject) {
-                    $scope.userEmail = $localStorage.message;//$rootScope.myObject.value;
-
-                //}
-                //else{
-                    //$location.path('/');
-
-                    //save in local storage
-
-                //}
+                $rootScope.userId=$localStorage.userId;
+                $rootScope.isloggedIn=$localStorage.isLoggedIn;
             });
     };
 

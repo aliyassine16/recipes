@@ -17,6 +17,5 @@
 
 
 ## features to add
-1. user login with stared recipes per user.
-2. more filters in the recipes page.
-3. Unit test for the Frontend/Backend.
+1. stared recipes per user.
+2. Unit test for the Frontend/Backend.

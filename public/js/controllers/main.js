@@ -25,12 +25,23 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
             UserService.create($scope.formData)
 
             // if successful creation, call our get function to get all the new users
-                .success(function (data) {
-                    $scope.loading = false;
-                    $scope.formData = {}; // clear the form so our user is ready to enter another
-                    $scope.users = data; // assign our new list of users
-                    $localStorage.message = "Hello World";
-                    $location.path('/recipe');
+                .success(function (response) {
+
+                    if (response.success == true) {
+                        //console.log(data);
+                        $scope.loading=false;
+                        $scope.formData = {};
+                        $localStorage.userId = response.data;
+                        $localStorage.isLoggedIn = true;
+                        $rootScope.isloggedIn=true;
+                        $location.path('/');
+                    }
+                    else {
+                        $rootScope.isloggedIn=true;
+                        $localStorage.userId = null;
+                        $localStorage.isLoggedIn = false;
+                        $scope.errorLogin = true;
+                    }
                 });
         }
     };

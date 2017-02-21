@@ -5,6 +5,10 @@ app.factory('UserService', ['$http', function ($http) {
         },
         create: function (data) {
             return $http.post('/api/createUser', data);
+        },
+        login: function (data) {
+            return $http.post('/api/user/login/', data);
         }
     }
+
 }]);

@@ -140,10 +140,40 @@ module.exports = function (app) {
             email: req.body.email
         }, function (err, data) {
             if (err)
-                res.send(err);
+                res.send({success:false,err:err});
 
-            // send a list of all users
-            getUsers(res);
+            // send the user object
+            console.log(data);
+            if(data==null || data==undefined){
+                res.send({success:false,err:"User Does not Exist"});
+            }
+            else{
+                res.send({success:true,data:data});
+            }
+        });
+
+    });
+
+
+    app.post('/api/user/login', function (req, res) {
+
+        // create a user, information comes from AJAX request from Angular
+        User.findOne({
+            email: req.body.email
+        }, function (err, data) {
+            if (err)
+                res.send({success:false,err:err});
+
+            // send the user object
+            console.log(data);
+            if(data==null || data==undefined){
+                res.send({success:false,err:"User Does not Exist"});
+            }
+            else{
+                res.send({success:true,data:data});
+            }
+
+
         });
 
     });
