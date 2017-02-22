@@ -7,8 +7,8 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
     // GET ====================================================================
 
     UserService.get()
-        .success(function (data) {
-            $scope.users = data;
+        .success(function (response) {
+            $scope.users = response.data;
             $scope.loading = false;
         });
 
@@ -53,10 +53,10 @@ app.controller("mainController", ['$scope', '$http', 'UserService', 'RecipeServi
         RecipeService.populate()
 
         // if successful creation, call our get function to get all the new users
-            .success(function (data) {
+            .success(function (response) {
                 $scope.loading = false;
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.users = data; // assign our new list of users
+                $scope.users = response.data; // assign our new list of users
                 $location.path('/recipe');
             });
 

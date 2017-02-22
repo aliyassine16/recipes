@@ -14,8 +14,8 @@ app.controller("recipeDetailController", ['$scope', '$http', 'UserService', 'Rec
 
 
         RecipeDetailService.get($routeParams.recipeId)
-            .success(function (data) {
-                $scope.recipeDetails = data;
+            .success(function (response) {
+                $scope.recipeDetails = response.data;
                 $scope.loading = false;
                 if ($rootScope.myObject) {
                     $scope.userEmail = $rootScope.myObject.value;

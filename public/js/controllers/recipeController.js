@@ -12,8 +12,8 @@ app.controller("recipeController", ['$scope', '$http', 'UserService', 'RecipeSer
 
     var init = function () {
         RecipeService.get()
-            .success(function (data) {
-                $scope.recipes = data;
+            .success(function (response) {
+                $scope.recipes = response.data;
                 $scope.loading = false;
                 $rootScope.userId=$localStorage.userId;
                 $rootScope.isloggedIn=$localStorage.isLoggedIn;

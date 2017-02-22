@@ -7,10 +7,10 @@ function getUsers(res) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
         if (err) {
-            res.send(err);
+            res.send({success: false, err: err});
         }
 
-        res.json(data); // return all users in JSON format
+        res.json({success: true, data: data}); // return all users in JSON format
     });
 };
 
@@ -62,9 +62,12 @@ function polulateData(res) {
 
     Recipe.find({})
         .populate('ingredients')
-        .exec(function (error, recipes) {
+        .exec(function (err, recipes) {
+            if (err) {
+                res.send({success: false, err: err});
+            }
             console.log(JSON.stringify(recipes, null, "\t"));
-            res.json(recipes);
+            res.json({success: true, data: recipes});
         });
 
 }
@@ -76,26 +79,32 @@ function getRecipes(res) {
         .populate('ingredients')
         .exec(function (err, recipes) {
             if (err) {
-                res.send(err);
+                res.send({success: false, err: err});
             }
             console.log(JSON.stringify(recipes, null, "\t"));
-            res.json(recipes);
+            res.json({success: true, data: recipes});
         });
 
 
 };
 
-function getRecipeDetails(res,id) {
+function getRecipeDetails(res, id) {
 
 
-    Recipe.find({_id:id})
+    Recipe.find({_id: id})
         .populate('ingredients')
         .exec(function (err, recipeDetails) {
             if (err) {
-                res.send(err);
+                res.send({success: false, err: err});
             }
             console.log(JSON.stringify(recipeDetails, null, "\t"));
-            res.json(recipeDetails);
+
+            if (recipeDetails == null || recipeDetails == undefined || recipeDetails.length==0 ) {
+                res.send({success: false, err: "recipe Does not Exist"});
+            }
+            else {
+                res.send({success: true, data: recipeDetails});
+            }
         });
 
 
@@ -119,10 +128,8 @@ module.exports = function (app) {
     app.get('/api/listRecipeDetail/:id', function (req, res) {
         // use mongoose to get all recipes in the database
         //getUsers(res);
-        getRecipeDetails(res,req.params.id);
+        getRecipeDetails(res, req.params.id);
     });
-
-
 
 
     app.get('/api/populateData', function (req, res) {
@@ -140,15 +147,15 @@ module.exports = function (app) {
             email: req.body.email
         }, function (err, data) {
             if (err)
-                res.send({success:false,err:err});
+                res.send({success: false, err: err});
 
             // send the user object
             console.log(data);
-            if(data==null || data==undefined){
-                res.send({success:false,err:"User Does not Exist"});
+            if (data == null || data == undefined) {
+                res.send({success: false, err: "User Does not Exist"});
             }
-            else{
-                res.send({success:true,data:data});
+            else {
+                res.send({success: true, data: data});
             }
         });
 
@@ -162,22 +169,21 @@ module.exports = function (app) {
             email: req.body.email
         }, function (err, data) {
             if (err)
-                res.send({success:false,err:err});
+                res.send({success: false, err: err});
 
             // send the user object
             console.log(data);
-            if(data==null || data==undefined){
-                res.send({success:false,err:"User Does not Exist"});
+            if (data == null || data == undefined) {
+                res.send({success: false, err: "User Does not Exist"});
             }
-            else{
-                res.send({success:true,data:data});
+            else {
+                res.send({success: true, data: data});
             }
 
 
         });
 
     });
-
 
 
     // application -------------------------------------------------------------
